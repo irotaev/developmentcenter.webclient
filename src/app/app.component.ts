@@ -5,7 +5,7 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
 
 }
