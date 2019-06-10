@@ -1,3 +1,48 @@
 $mainColor: #636363e8;
 $mainColorStrong: #000000e8;
 $lightColor: #63636317;
+
+$first-color: #0057868a;
+
+$text-size-default: 13px;
+$text-size-h2: 17px;
+
+$text-color-default: $mainColorStrong;
+
+$background-color-light: #f9f9f9;
+
+//#region Media
+
+$mediaMobileSize: 320px;
+$mediaTabletSmallSize: 760px;
+$mediaTableSize: 1024px;
+$mediaMediumDesktop: 1640px;
+$mediaLargeDesktop: 1920px;
+
+//#endregion
+
+//#region Padding & Margins
+
+$stepDefault: 20px;
+
+//#endregion
+
+.text {
+  letter-spacing: 1px;
+}
+
+.text-default {
+  font-size: $text-size-default;
+  line-height: 18px;
+  color: $text-color-default;
+  letter-spacing: 1px;
+}
+
+.text-h2 {
+  font-size: $text-size-h2;
+  line-height: 25px;
+  color: $text-color-default;
+  letter-spacing: 1px;
+}
+
+
