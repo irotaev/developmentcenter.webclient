@@ -27,7 +27,7 @@
       left: 0;
       top: 0;
       font-size: 15px;
-      color: #0057868a;
+      color: $secondary-color;
       letter-spacing: 8px;
       background-color: white;
       margin: 40px 0;
@@ -66,7 +66,7 @@
   #screen-second {
     position: relative;
     display: block;
-    padding: 0 2%;
+    padding: 0 2*$stepDefault;
 
     background-color: $background-color-light;
 
@@ -208,5 +208,13 @@
       flex-direction: column;
       align-items: center;
     }
+  }
+
+  #screen-all-benefits {
+    position: relative;
+    display: block;
+    padding: 0 2*$stepDefault;
+
+
   }
 }
