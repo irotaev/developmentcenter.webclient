@@ -1,6 +1,7 @@
 $mainColor: #636363e8;
 $mainColorStrong: #000000e8;
 $lightColor: #63636317;
+$darkColor: #8a948e;
 
 $secondary-color: #26A65B;
 
@@ -30,6 +31,10 @@ $stepDefault: 20px;
 
 .text {
   letter-spacing: 1px;
+}
+
+.text-white {
+  color: #f9f9f9 !important;
 }
 
 .text-default {

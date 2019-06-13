@@ -67,7 +67,7 @@
   .screen-utp {
     width: 100%;
     height: 4*$stepDefault;
-    background-color: $secondary-color;
+    background-color: $darkColor;
     color: white;
     line-height: 4*$stepDefault;
     text-align: center;
@@ -285,6 +285,38 @@
           h2 {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
           p {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
         }
+      }
+    }
+  }
+
+  #screen-start-write-task {
+    display: flex;
+    justify-content: space-between;
+    padding: 3*$stepDefault;
+    background-color: $darkColor;
+    color: $mainColor;
+
+    .write-your-project {
+      width: 100%;
+      margin-right: 4*$stepDefault;
+      height: 2*$stepDefault;
+      padding: 2*$stepDefault;
+    }
+
+    .description {
+      display: block;
+      width: 18*$stepDefault;
+    }
+
+    @media screen and (max-width: $mediaTableSize) {
+      display: block;
+
+      .write-your-project {
+        margin-right: 0;
+      }
+
+      .description {
+        padding-top: 2*$stepDefault;
       }
     }
   }

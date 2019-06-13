@@ -1,6 +1,7 @@
 @import '~reset-css/reset.css';
 @import url('https://fonts.googleapis.com/css?family=Anton|Roboto|Montserrat&display=swap');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "framework";
 
 html, body {
   width: 100%;
@@ -12,3 +13,9 @@ html, body {
     box-sizing: border-box;
   }
 }
+
+//#region Overrides
+.mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+  background-color: $secondary-color !important;
+}
+//#endregion
