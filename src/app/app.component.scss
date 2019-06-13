@@ -26,41 +26,51 @@
       position: absolute;
       left: 0;
       top: 0;
-      font-size: 15px;
-      color: $secondary-color;
-      letter-spacing: 8px;
+      font-size: 12px;
+      color: $mainColor;
+      letter-spacing: 5px;
       background-color: white;
       margin: 40px 0;
       padding: 25px;
       font-weight: bold;
+
+      b {
+        color: $secondary-color;
+      }
     }
 
     .write-us {
       position: absolute;
       right: 0;
       bottom: 100px;
-      width: 45%;
-      padding: 50px;
+      width: 25*$stepDefault;
+      padding: 2*$stepDefault;
       background-color: white;
 
       .text {
         color: $mainColor;
-        font-size: 20px;
-        line-height: 30px;
-        letter-spacing: 2px;
       }
 
-      .write-task-input {
-        padding: 10px;
-        border: 1px solid $lightColor;
-        color: $mainColor;
-        font-size: 13px;
-        display: block;
+      .make-order {
+        margin: $stepDefault 0;
         width: 100%;
-        height: 50px;
-        margin-top: 25px;
+        height: 2*$stepDefault;
+      }
+
+      @media screen and (max-width: $mediaTabletSmallSize) {
+        width: 100%;
+        padding-left: 4*$stepDefault;
       }
     }
+  }
+
+  .screen-utp {
+    width: 100%;
+    height: 4*$stepDefault;
+    background-color: $secondary-color;
+    color: white;
+    line-height: 4*$stepDefault;
+    text-align: center;
   }
 
   #screen-second {
@@ -129,7 +139,7 @@
     align-items: center;
     background-color: #f9f9f9;
     min-height: 200px;
-    padding: 2*$stepDefault 2% 0;
+    padding: 2*$stepDefault;
 
     .text-vertical-management {
       display: block;
@@ -142,8 +152,8 @@
       min-width: $mediaMobileSize;
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
       background-color: white;
+      flex-wrap: wrap;
       border: 1px solid $lightColor;
 
       .block {
@@ -156,7 +166,7 @@
           top: 20px;
           left: 50px;
           width: 80px;
-          border-top: 2px solid #19B5FE;
+          border-top: 2px solid $secondary-color;
         }
 
         .side-line {
@@ -213,8 +223,69 @@
   #screen-all-benefits {
     position: relative;
     display: block;
-    padding: 0 2*$stepDefault;
+    padding: 2*$stepDefault;
 
+    .benefits-wrapper {
+      display: grid;
+      grid-auto-rows: 7*$stepDefault + 4*$stepDefault;
+      grid-template-columns: repeat(auto-fill, 12*$stepDefault + 4*$stepDefault);
+      justify-content: space-between;
+      align-items: center;
+      justify-items: center;
 
+      .benefit-block {
+        position: relative;
+        width: 12*$stepDefault;
+        height: 7*$stepDefault;
+
+        .icon {
+          position: absolute;
+          width: 2*$stepDefault;
+          height: 2*$stepDefault;
+          top: $stepDefault;
+          left: $stepDefault;
+          background-image: url("~src/assets/icon-dev.png");
+          background-size: 2*$stepDefault;
+        }
+
+        h2 {
+          position: absolute;
+          top: $stepDefault;
+          left: 4*$stepDefault;
+          width: 6*$stepDefault;
+          height: $stepDefault;
+          line-height: $stepDefault;
+          font-weight: bold;
+        }
+
+        p {
+          position: absolute;
+          width: 10*$stepDefault;
+          top: 4*$stepDefault;
+          left: $stepDefault;
+        }
+      }
+
+      @media screen and (max-width: $mediaTableSize) {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fill, 12*$stepDefault + 2*$stepDefault);
+      }
+
+      @media screen and (max-width: $mediaTabletSmallSize) {
+        display: block;
+
+        .benefit-block {
+          min-width: $mediaMobileSize;
+          margin: 0 auto 2*$stepDefault;
+          border-bottom: 1px solid $lightColor;
+          height: auto;
+          &:last-child {border-bottom: none; margin-bottom: 0;}
+
+          .icon {display: none;}
+          h2 {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
+          p {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
+        }
+      }
+    }
   }
 }

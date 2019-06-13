@@ -2,10 +2,11 @@ $mainColor: #636363e8;
 $mainColorStrong: #000000e8;
 $lightColor: #63636317;
 
-$secondary-color: #3863a0;
+$secondary-color: #26A65B;
 
 $text-size-default: 13px;
 $text-size-h2: 17px;
+$text-size-h1: 20px;
 
 $text-color-default: $mainColorStrong;
 
@@ -43,6 +44,13 @@ $stepDefault: 20px;
   line-height: 25px;
   color: $text-color-default;
   letter-spacing: 1px;
+}
+
+.text-h1 {
+  font-size: $text-size-h1;
+  line-height: 30px;
+  color: $text-color-default;
+  letter-spacing: 2px;
 }
 
 
