@@ -46,6 +46,7 @@
       width: 25*$stepDefault;
       padding: 2*$stepDefault;
       background-color: white;
+      border-left: 1px solid $darkColor;
 
       .text {
         color: $mainColor;
