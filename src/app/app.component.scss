@@ -63,8 +63,9 @@
 
       .make-order {
         margin: $stepDefault 0;
-        width: 100%;
-        height: 2*$stepDefault;
+        width: 150px;
+        height: 50px;
+        float: right;
       }
 
       @media screen and (max-width: $mediaTabletSmallSize) {
@@ -86,42 +87,42 @@
 
   .screen-important-benefit {
     position: relative;
-    max-width: $mediaMediumDesktop;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    background-color: $background-color-light;
+    padding-top: 2*$stepDefault;
+    padding-bottom: 2*$stepDefault;
 
     .benefit {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      width: 10*$stepDefault;
-      height: 10*$stepDefault;
-      background-color: $darkColor;
-      padding: 2*$stepDefault;
+      width: 9*$stepDefault;
+      height: 9*$stepDefault;
       margin: 2*$stepDefault 3*$stepDefault;
-      border-radius: 50%;
-
-      .highlight {
-        font-weight: bold;
-        font-size: 120%;
-      }
 
       .message {
+        position: relative;
         display: block;
         height: 80px;
-        color: white;
         text-align: center;
       }
 
       .number {
-        color: white;
-        font-size: 25px;
         position: relative;
-        top: -$stepDefault;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: $darkColor;
+        height: 2*$stepDefault;
+        width: 2*$stepDefault;
+        border-radius: 50%;
+        font-size: 25px;
       }
     }
   }
