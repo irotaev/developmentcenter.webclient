@@ -1,0 +1,181 @@
+@import "~src/framework";
+
+:host(app-profile) {
+  .section-profile {
+    background-color: $colorBackgroundLight;
+    padding: 2*$stepDefault;
+    min-height: 100%;
+
+    @include mediaScreen($mediaMobile) {
+      padding: 0;
+    }
+  }
+
+  .section-inner-wrapper {
+    position: relative;
+    display: flex;
+    max-width: $mediaTable;
+    margin: 0 auto;
+    @include card();
+
+    .main-info {
+      position: relative;
+      width: 100%;
+      padding: 2*$stepDefault;
+      display: flex;
+      flex-wrap: nowrap;
+      background-color: white;
+
+      .photo {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10*$stepDefault;
+        height: 10*$stepDefault;
+        margin-right: 2*$stepDefault;
+
+        .add-photo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &.no-photo {
+          border: 1px dotted $colorLight;
+
+          .add-photo {
+            color: $colorMain;
+            opacity: 0.8;
+            cursor: pointer;
+
+            .text {
+              margin-top: $stepDefault/2;
+              @extend .text-h2;
+              color: $colorMain;
+            }
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+
+      .information-wrapper {
+        flex-grow: 1;
+
+        .personal-info-wrapper {
+          position: relative;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          margin-bottom: $stepDefault;
+
+          .name-wrapper {
+            display: flex;
+            align-items: center;
+
+            .dot {
+              @include figureDot();
+              margin-right: $stepDefault/2;
+            }
+          }
+          .name {
+            @extend .text-h2;
+            white-space: nowrap;
+            margin-right: $stepDefault/2;
+          }
+          .prof-name {
+            @extend .text-default;
+            color: $colorDark;
+            white-space: nowrap;
+          }
+          .rating {
+            width: 4*$stepDefault;
+            height: $stepDefault;
+            background-color: yellow;
+          }
+
+          @include mediaScreen($mediaTabletSmall) {
+            .name-wrapper {
+              .dot {
+                display: none;
+              }
+
+              display: block;
+            }
+            .name {
+              margin-right: 0;
+            }
+            .prof-name {
+              margin-top: $stepDefault/4;
+            }
+          }
+
+          @include mediaScreen($mediaMobile) {
+            margin-top: $stepDefault;
+          }
+        }
+
+        .description {
+          @extend .text-default;
+          color: $colorMain;
+          max-width: 20*$stepDefault;
+          overflow-wrap: break-word;
+          white-space: pre-line;
+        }
+      }
+
+      @include mediaScreen($mediaMobile) {
+        align-items: center;
+        flex-direction: column;
+
+        .photo {
+          margin-right: 0;
+        }
+      }
+
+      .employment-wrapper {
+        border-top: 1px solid $colorLight;
+        margin-top: $stepDefault;
+        padding-top: $stepDefault;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .online-wrapper {
+          display: flex;
+          align-items: center;
+        }
+        .online-icon {
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background-color: $colorGreen;
+          margin-right: $stepDefault/2;
+        }
+        .last-seen {
+          @extend .text-default;
+          white-space: nowrap;
+        }
+
+        .work-hours {
+          white-space: nowrap;
+          @extend .text-secondary;
+        }
+
+        @include mediaScreen($mediaTabletSmall) {
+          flex-direction: column;
+          align-items: start;
+          justify-content: center;
+
+          .work-hours {
+            margin-top: $stepDefault/4;
+          }
+        }
+      }
+    }
+  }
+}

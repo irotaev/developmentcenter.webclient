@@ -1,5 +1,6 @@
 @import '~reset-css/reset.css';
-@import url('https://fonts.googleapis.com/css?family=Anton|Roboto|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Crete+Round|Anton|Roboto|Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "framework";
 
@@ -7,6 +8,7 @@ html, body {
   width: 100%;
   height: 100%;
   margin: 0; padding: 0;
+  font-size: $textFontSizeOrigin;
 
   * {
     font-family: 'Helventica', sans-serif;
@@ -16,6 +18,11 @@ html, body {
 
 //#region Overrides
 .mat-fab.mat-accent, .mat-flat-button.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
-  background-color: $secondary-color !important;
+  background-color: $colorSecondary !important;
+
+  .mat-button-wrapper {
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
 }
 //#endregion

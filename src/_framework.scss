@@ -1,25 +1,34 @@
-$mainColor: #636363e8;
-$mainColorStrong: #000000e8;
-$lightColor: #63636317;
-$darkColor: #8a948e;
+$colorMain: #636363e8;
+$colorMainStrong: #000000e8;
+$colorLight: #63636317;
+$colorDark: #606d88;
+$colorGreen: #43c692;
 
-$secondary-color: #26A65B;
+$colorSecondary: $colorGreen;
+$colorBackgroundLight: #f9f9f9;
 
-$text-size-default: 13px;
-$text-size-h2: 17px;
-$text-size-h1: 20px;
+$textFontSizeOrigin: 13px;
+$textFontSizeDefault: 1em;
+$textFontSizeH2: 1.3em;
+$textFontSizeH1: 1.54em;
 
-$text-color-default: $mainColorStrong;
+$text-color-default: $colorMainStrong;
 
-$background-color-light: #f9f9f9;
+$fontHighlight: "Crete Round";
 
 //#region Media
 
-$mediaMobileSize: 320px;
-$mediaTabletSmallSize: 760px;
-$mediaTableSize: 1024px;
-$mediaMediumDesktop: 1400px;
-$mediaLargeDesktop: 1920px;
+$mediaMobile: 420px;
+$mediaTabletSmall: 768px;
+$mediaTable: 1024px;
+$mediaLaptopDesktop: 1440px;
+$mediaDesktop: 1920px;
+
+@mixin mediaScreen($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
 
 //#endregion
 
@@ -29,6 +38,7 @@ $stepDefault: 20px;
 
 //#endregion
 
+//#region Text
 .text {
   letter-spacing: 1px;
 
@@ -43,24 +53,49 @@ $stepDefault: 20px;
 }
 
 .text-default {
-  font-size: $text-size-default;
+  font-size: $textFontSizeDefault;
   line-height: 18px;
   color: $text-color-default;
   letter-spacing: 1px;
 }
 
+.text-secondary {
+  @extend .text-default;
+  color: $colorMain;
+}
+
 .text-h2 {
-  font-size: $text-size-h2;
+  font-size: $textFontSizeH2;
   line-height: 25px;
   color: $text-color-default;
   letter-spacing: 1px;
 }
 
 .text-h1 {
-  font-size: $text-size-h1;
+  font-size: $textFontSizeH1;
   line-height: 30px;
   color: $text-color-default;
   letter-spacing: 2px;
 }
+//#endregion
+
+//#region Figure
+@mixin figureDot($size: 4px, $bgColor: $text-color-default)
+{
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  background-color: $bgColor;
+}
+//#endregion
+
+//#region Layouts
+@mixin card($bgColor: white) {
+  background-color: $bgColor;
+  display: block;
+  position: relative;
+  box-shadow: 0 0 4px 0 darken($colorLight, 30%);
+}
+//#endregion
 
 
