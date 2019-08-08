@@ -16,25 +16,61 @@ $text-color-default: $colorMainStrong;
 
 $fontHighlight: "Crete Round";
 
+//#region Padding & Margins
+
+$stepDefault: 20px;
+
+//#endregion
+
 //#region Media
 
-$mediaMobile: 320px;
-$mediaLaptoptSmall: 768px;
+$mediaMobileS: 320px;
+$mediaMobileL: 425px;
+$mediaTablet: 768px;
 $mediaLaptop: 1024px;
 $mediaLaptopL: 1440px;
 $mediaDesktop: 1920px;
 
-@mixin mediaScreen($size) {
-  @media screen and (max-width: $size) {
+@mixin mediaScreen($size, $widthCondition: 'max-width') {
+  @media screen and (#{$widthCondition}: $size) {
+    @content;
+  }
+}
+@mixin mediaElementScreen($element, $size) {
+  $newSize: $size - 2*$stepDefault - 10px;
+
+  #{$element}[max-width~='#{$newSize}'] {
     @content;
   }
 }
 
-//#endregion
+@mixin mediaGap($gap, $direction, $mode: 'padding') {
+  #{$mode}-#{$direction}: $gap;
 
-//#region Padding & Margins
+  @if ($gap/2 >= $stepDefault/2) {  
+    @include mediaScreen($mediaLaptop) {
+      #{$mode}-#{$direction}: $gap/2;
+    }
+  }
 
-$stepDefault: 20px;
+  @if ($gap/4 >= $stepDefault/2) {  
+    @include mediaScreen($mediaMobileL) {
+      #{$mode}-#{$direction}: $gap/4;
+    }
+  }
+}
+@mixin mediaGapPadding($gapTop, $gapSide) {
+  @include mediaGap($gapTop, 'top');
+  @include mediaGap($gapTop, 'bottom');
+  @include mediaGap($gapSide, 'left');
+  @include mediaGap($gapSide, 'right');
+}
+@mixin mediaGapMargin($gapTop, $gapSide) {
+  @include mediaGap($gapTop, 'top', 'margin');
+  @include mediaGap($gapTop, 'bottom', 'margin');
+  @include mediaGap($gapSide, 'left', 'margin');
+  @include mediaGap($gapSide, 'right', 'margin');
+}
 
 //#endregion
 

@@ -6,19 +6,12 @@
   height: 100%;
 
   .screen {
-    padding: 4*$stepDefault 2*$stepDefault;
+    // padding: 4*$stepDefault 2*$stepDefault;
+    @include mediaGapPadding(2*$stepDefault, 2*$stepDefault);
 
-    &.screen-utp, #screen-start-write-task {
-      padding: 0 2*$stepDefault;
-    }
-
-    @media screen and (max-width: $mediaLaptop) {
-      padding: 2*$stepDefault 2*$stepDefault;
-    }
-
-    @media screen and (max-width: $mediaLaptoptSmall) {
-      padding: $stepDefault 2*$stepDefault;
-    }
+    &.screen-utp, #screen-start-write-task {      
+      @include mediaGapPadding(0, 2*$stepDefault);
+    }    
   }
 
   #screen-first {
@@ -76,7 +69,7 @@
         float: right;
       }
 
-      @media screen and (max-width: $mediaLaptoptSmall) {
+      @media screen and (max-width: $mediaTablet) {
         width: 100%;
         padding-left: 4*$stepDefault;
       }
@@ -100,19 +93,13 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: $colorBackgroundLight;
-    padding-top: 2*$stepDefault;
-    padding-bottom: 0;
+    background-color: $colorBackgroundLight;        
 
     .benefit {
-      @include card();
-      /*display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;*/
+      @include card();      
       width: 14*$stepDefault;
       height: 14*$stepDefault;
-      margin: 2*$stepDefault 2*$stepDefault;
+      @include mediaGapMargin($stepDefault, $stepDefault);
       padding: $stepDefault;
 
       .message {
@@ -225,10 +212,11 @@
       flex-wrap: nowrap;
       border: 1px solid $colorLight;
       flex: 4;
+      min-width: 800px;
 
       .block {
         position: relative;
-        max-width: $mediaMobile;
+        max-width: $mediaMobileS;
         min-width: 200px;
         height: 230px;
 
@@ -258,27 +246,44 @@
           width: 70%;
         }
 
-        &:last-child {
+        &.last {
           .side-line {
             border-left: none;
           }
         }
-      }      
-    }    
-    @include mediaScreen($mediaLaptop) {
+      }            
+    }        
+    @include mediaElementScreen('.how-it-works', $mediaTablet) {
+      background-color: transparent;
+      padding: 0 2*$stepDefault;
+      display: block;
+      border: none;
 
-    }
-    .how-it-works[max-width~="770px"] {
-       flex-direction: column;          
-    }
+      .block {        
+        .side-line {display: none;}               
+        height: auto;
+        margin-top: 2*$stepDefault;
+        max-width: $mediaMobileL;
 
-    @media screen and (max-width: $mediaLaptop) {
+        p {
+          margin-top: $stepDefault;
+          width: inherit;
+        }
+      }
+    }            
+  }
+  @media screen and (max-width: $mediaLaptop) {
+    #screen-vertical-management {    
       width: 100%;
       justify-content: center;
       flex-direction: column;
       align-items: center;
+
+      .how-it-works {
+        min-width: 0;
+      }
     }
-  }
+  }    
 
   #screen-all-benefits {
     position: relative;
@@ -330,11 +335,11 @@
         grid-template-columns: repeat(auto-fill, 12*$stepDefault + 2*$stepDefault);
       }
 
-      @media screen and (max-width: $mediaLaptoptSmall) {
+      @media screen and (max-width: $mediaTablet) {
         display: block;
 
         .benefit-block {
-          min-width: $mediaMobile;
+          min-width: $mediaMobileS;
           margin: 0 auto 2*$stepDefault;
           border-bottom: 1px solid $colorLight;
           height: auto;

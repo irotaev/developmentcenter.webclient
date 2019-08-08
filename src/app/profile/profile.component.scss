@@ -6,7 +6,7 @@
     padding: 2*$stepDefault;
     min-height: 100%;
 
-    @include mediaScreen($mediaMobile) {
+    @include mediaScreen($mediaMobileS) {
       padding: 0;
     }
   }
@@ -98,7 +98,7 @@
             background-color: yellow;
           }
 
-          @include mediaScreen($mediaLaptoptSmall) {
+          @include mediaScreen($mediaTablet) {
             .name-wrapper {
               .dot {
                 display: none;
@@ -114,7 +114,7 @@
             }
           }
 
-          @include mediaScreen($mediaMobile) {
+          @include mediaScreen($mediaMobileS) {
             margin-top: $stepDefault;
           }
         }
@@ -128,7 +128,7 @@
         }
       }
 
-      @include mediaScreen($mediaMobile) {
+      @include mediaScreen($mediaMobileS) {
         align-items: center;
         flex-direction: column;
 
@@ -166,7 +166,7 @@
           @extend .text-secondary;
         }
 
-        @include mediaScreen($mediaLaptoptSmall) {
+        @include mediaScreen($mediaTablet) {
           flex-direction: column;
           align-items: start;
           justify-content: center;
