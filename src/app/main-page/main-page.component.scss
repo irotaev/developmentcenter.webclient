@@ -105,19 +105,22 @@
     padding-bottom: 0;
 
     .benefit {
-      display: flex;
+      @include card();
+      /*display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      width: 9*$stepDefault;
-      height: 9*$stepDefault;
-      margin: 2*$stepDefault 3*$stepDefault;
+      align-items: center;*/
+      width: 14*$stepDefault;
+      height: 14*$stepDefault;
+      margin: 2*$stepDefault 2*$stepDefault;
+      padding: $stepDefault;
 
       .message {
         position: relative;
         display: block;
         height: 80px;
         text-align: center;
+        padding: 0 $stepDefault;
       }
 
       .number {
@@ -131,6 +134,7 @@
         width: 2*$stepDefault;
         border-radius: 50%;
         font-size: 25px;
+        margin: 1.5*$stepDefault auto;
       }
     }
   }
@@ -138,7 +142,6 @@
   #screen-second {
     position: relative;
     display: block;
-
     background-color: $colorBackgroundLight;
 
     .our-expertise {
@@ -160,6 +163,7 @@
     }
 
     .work-block {
+      @include card();
       position: relative;
       width: 260px;
       height: 130px;
@@ -203,30 +207,35 @@
     min-height: 200px;
 
     .text-vertical-management {
-      display: block;
-      padding: 2*$stepDefault;
+      display: block;      
       font-weight: bold;
+      flex: 1;
+      text-align: center;
+      padding: 2*$stepDefault;
+      text-wrap: avoid;
+      white-space: nowrap;
     }
 
     .how-it-works {
       max-width: $mediaTable;
-      min-width: $mediaMobile;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       background-color: white;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       border: 1px solid $colorLight;
+      flex: 4;
 
       .block {
         position: relative;
-        width: $mediaMobile;
+        max-width: $mediaMobile;
+        min-width: 200px;
         height: 230px;
 
         .top-line {
-          position: absolute;
-          top: 20px;
-          left: 50px;
+          position: relative;
+          margin-top: 20px;
+          margin-left: 50px;
           width: 80px;
           border-top: 2px solid $colorSecondary;
         }
@@ -242,9 +251,9 @@
 
         p {
           display: block;
-          position: absolute;
-          left: 15%;
-          top: 100px;
+          position: relative;
+          margin-left: $stepDefault;
+          margin-top: 3*$stepDefault;
           text-align: left;
           width: 70%;
         }
@@ -255,8 +264,7 @@
           }
         }
       }
-
-      @media screen and (max-width: $mediaTable) {
+      /*@media screen and (max-width: $mediaTable) {
         //display: grid;
         //grid-auto-rows: 230px + 2*$stepDefault;
         //grid-template-columns: repeat(auto-fill, $mediaMobileSize + 2*$stepDefault);
@@ -269,10 +277,14 @@
 
         .block {
           background-color: white;
-          .side-line {border: none}
+
+          .side-line {
+            border: none
+          }
+
           margin: 2*$stepDefault;
         }
-      }
+      }*/
     }
 
     @media screen and (max-width: $mediaTable) {
@@ -341,11 +353,29 @@
           margin: 0 auto 2*$stepDefault;
           border-bottom: 1px solid $colorLight;
           height: auto;
-          &:last-child {border-bottom: none; margin-bottom: 0;}
 
-          .icon {display: none;}
-          h2 {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
-          p {position: relative; top: auto; left: auto; margin-bottom: $stepDefault;}
+          &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+          }
+
+          .icon {
+            display: none;
+          }
+
+          h2 {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin-bottom: $stepDefault;
+          }
+
+          p {
+            position: relative;
+            top: auto;
+            left: auto;
+            margin-bottom: $stepDefault;
+          }
         }
       }
     }

@@ -18,7 +18,7 @@ $fontHighlight: "Crete Round";
 
 //#region Media
 
-$mediaMobile: 420px;
+$mediaMobile: 320px;
 $mediaTabletSmall: 768px;
 $mediaTable: 1024px;
 $mediaLaptopDesktop: 1440px;
@@ -54,7 +54,7 @@ $stepDefault: 20px;
 
 .text-default {
   font-size: $textFontSizeDefault;
-  line-height: 18px;
+  line-height: 23px;
   color: $text-color-default;
   letter-spacing: 1px;
 }
@@ -66,14 +66,14 @@ $stepDefault: 20px;
 
 .text-h2 {
   font-size: $textFontSizeH2;
-  line-height: 25px;
+  line-height: 29px;
   color: $text-color-default;
   letter-spacing: 1px;
 }
 
 .text-h1 {
   font-size: $textFontSizeH1;
-  line-height: 30px;
+  line-height: 35px;
   color: $text-color-default;
   letter-spacing: 2px;
 }
