@@ -14,7 +14,7 @@
   .section-inner-wrapper {
     position: relative;
     display: flex;
-    max-width: $mediaTable;
+    max-width: $mediaLaptop;
     margin: 0 auto;
     @include card();
 
@@ -98,7 +98,7 @@
             background-color: yellow;
           }
 
-          @include mediaScreen($mediaTabletSmall) {
+          @include mediaScreen($mediaLaptoptSmall) {
             .name-wrapper {
               .dot {
                 display: none;
@@ -166,7 +166,7 @@
           @extend .text-secondary;
         }
 
-        @include mediaScreen($mediaTabletSmall) {
+        @include mediaScreen($mediaLaptoptSmall) {
           flex-direction: column;
           align-items: start;
           justify-content: center;

@@ -12,11 +12,11 @@
       padding: 0 2*$stepDefault;
     }
 
-    @media screen and (max-width: $mediaTable) {
+    @media screen and (max-width: $mediaLaptop) {
       padding: 2*$stepDefault 2*$stepDefault;
     }
 
-    @media screen and (max-width: $mediaTabletSmall) {
+    @media screen and (max-width: $mediaLaptoptSmall) {
       padding: $stepDefault 2*$stepDefault;
     }
   }
@@ -76,7 +76,7 @@
         float: right;
       }
 
-      @media screen and (max-width: $mediaTabletSmall) {
+      @media screen and (max-width: $mediaLaptoptSmall) {
         width: 100%;
         padding-left: 4*$stepDefault;
       }
@@ -153,7 +153,7 @@
 
     .work-block-wrapper {
       display: grid;
-      max-width: $mediaLaptopDesktop;
+      max-width: $mediaLaptopL;
       grid-template-columns: repeat(auto-fill, 280px);
       grid-auto-rows: 150px;
       justify-content: center;
@@ -215,9 +215,9 @@
       text-wrap: avoid;
       white-space: nowrap;
     }
-
+    
     .how-it-works {
-      max-width: $mediaTable;
+      max-width: $mediaLaptop;      
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -263,31 +263,16 @@
             border-left: none;
           }
         }
-      }
-      /*@media screen and (max-width: $mediaTable) {
-        //display: grid;
-        //grid-auto-rows: 230px + 2*$stepDefault;
-        //grid-template-columns: repeat(auto-fill, $mediaMobileSize + 2*$stepDefault);
-        //justify-content: center;
-        //align-items: center;
-        flex-wrap: wrap;
-        border: none;
-        background-color: transparent;
-        width: 100%;
+      }      
+    }    
+    @include mediaScreen($mediaLaptop) {
 
-        .block {
-          background-color: white;
-
-          .side-line {
-            border: none
-          }
-
-          margin: 2*$stepDefault;
-        }
-      }*/
+    }
+    .how-it-works[max-width~="770px"] {
+       flex-direction: column;          
     }
 
-    @media screen and (max-width: $mediaTable) {
+    @media screen and (max-width: $mediaLaptop) {
       width: 100%;
       justify-content: center;
       flex-direction: column;
@@ -340,12 +325,12 @@
         }
       }
 
-      @media screen and (max-width: $mediaTable) {
+      @media screen and (max-width: $mediaLaptop) {
         justify-content: center;
         grid-template-columns: repeat(auto-fill, 12*$stepDefault + 2*$stepDefault);
       }
 
-      @media screen and (max-width: $mediaTabletSmall) {
+      @media screen and (max-width: $mediaLaptoptSmall) {
         display: block;
 
         .benefit-block {
@@ -400,7 +385,7 @@
       width: 18*$stepDefault;
     }
 
-    @media screen and (max-width: $mediaTable) {
+    @media screen and (max-width: $mediaLaptop) {
       display: block;
 
       .write-your-project {

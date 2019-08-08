@@ -19,9 +19,9 @@ $fontHighlight: "Crete Round";
 //#region Media
 
 $mediaMobile: 320px;
-$mediaTabletSmall: 768px;
-$mediaTable: 1024px;
-$mediaLaptopDesktop: 1440px;
+$mediaLaptoptSmall: 768px;
+$mediaLaptop: 1024px;
+$mediaLaptopL: 1440px;
 $mediaDesktop: 1920px;
 
 @mixin mediaScreen($size) {
